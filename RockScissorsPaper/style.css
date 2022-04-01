@@ -19,10 +19,10 @@ body {
 }
 
 button {
-  border: 0;
-  outline: 0;
-  background-color: #eeeeee;
-  font-size: 1.1rem;
+  border: none;
+  outline: none;
+  font-size: 3rem;
+  margin: 5px;
   transition: all 0.25s;
 }
 
@@ -30,44 +30,14 @@ button:hover {
   transform: scale(1.2);
 }
 
-.btn-box {
-  padding-top: 40px;
-}
-
-#preview {
+.frog-box {
+  background-color: white;
   width: 50%;
   margin: auto;
-  padding: 10px;
-  background-color: white;
-  border-radius: 0.5rem;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  border-radius: 1.2rem;
   box-shadow: 0 13px 27px -5px rgba(50, 50, 93, 0.25),
     0 8px 16px -8px rgba(0, 0, 0, 0.3), 0 -6px 16px -6px rgba(0, 0, 0, 0.025);
-  transition: all 0.25s;
-}
-
-#preview:hover {
-  transform: scale(1.1);
-}
-
-.num-box {
-  margin-top: 40px;
-}
-
-.num-box button {
-  font-size: 2rem;
-  padding: 10px;
-  margin: 5px;
-  background-color: white;
-  border-radius: 0.5rem;
-  box-shadow: 0 13px 27px -5px rgba(50, 50, 93, 0.25),
-    0 8px 16px -8px rgba(0, 0, 0, 0.3), 0 -6px 16px -6px rgba(0, 0, 0, 0.025);
-  transition: all 0.35s;
-}
-
-.num-box button:hover {
-  background-color: #85c88a;
-}
-
-#frog {
-  margin-bottom: 10px;
+  font-size: 1.2rem;
 }
