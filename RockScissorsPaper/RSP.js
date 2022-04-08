@@ -6,11 +6,15 @@ const subtitle = document.querySelector("#subtitle");
 const frog = document.querySelector("#frog");
 const kill = document.querySelector("#kill");
 const mine = document.querySelector("#mine");
+const score = document.querySelector("#score");
 
 const r_val = 0;
 const s_val = 1;
 const p_val = 2;
 let w_val = 0;
+let my_score = 0;
+let frog_score = 0;
+
 const com_val = [
   "ㅋㅋㅋ못이기쥬?개킹받쥬?죽이고싶쥬?근데못죽이쥬?",
   "ㅋㅋㅋ이럴줄앎(휴다행이다)",
@@ -33,9 +37,11 @@ const frogRSP = (input) => {
           break;
         case 1: //개구리 가위
           w_val = 2;
+          my_score++;
           break;
         case 2: //개구리 보
           w_val = 0;
+          frog_score++;
           break;
       }
       break;
@@ -43,13 +49,15 @@ const frogRSP = (input) => {
     case 1: //사람이 가위낸경우
       switch (value) {
         case 0:
-          w_val = 0;
+          w_val = 0; //개구리 주먹
+          frog_score++;
           break;
         case 1:
-          w_val = 1;
+          w_val = 1; //개구리 가위
           break;
         case 2:
-          w_val = 2;
+          w_val = 2; //개구리 보
+          my_score++;
           break;
       }
       break;
@@ -57,17 +65,20 @@ const frogRSP = (input) => {
     case 2: //사람이 보자기낸경우
       switch (value) {
         case 0:
-          w_val = 2;
+          w_val = 2; //개구리 주먹
+          my_score++;
           break;
         case 1:
-          w_val = 0;
+          w_val = 0; //개구리 가위
+          frog_score++;
           break;
         case 2:
-          w_val = 1;
+          w_val = 1; //개구리 보
           break;
       }
       break;
   }
+  score.textContent = `😠 ${my_score}:${frog_score} 🐸`;
   frog.textContent = f_val[value];
   comment.textContent = com_val[w_val];
   subtitle.textContent = result[w_val];
